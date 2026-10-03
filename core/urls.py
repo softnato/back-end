@@ -15,8 +15,10 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path
+from django.urls import path, include
 from Voluntariado_actividades_comunitarias.views import bienvenida
+from django.conf.urls.static import static
+from django.conf import settings
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -28,3 +30,11 @@ urlpatterns = [
 ]
 
 handler404 = 'Voluntariado_actividades_comunitarias.views.pagina_no_encontrada'
+
+urlpatterns = [
+    path('admin/', admin.site.urls),
+    path('api/v1/', include('Voluntariado_actividades_comunitarias.urls')),
+]
+
+if settings.DEBUG:
+    urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

@@ -172,3 +172,4 @@ class HistorialEstadoInscripcion(models.Model):
 
     def __str__(self):
         return f"Inscripción #{self.inscripcion.id}: {self.estado_anterior} -> {self.estado_nuevo}"
+    
