@@ -19,7 +19,7 @@ from django.urls import path, include
 from Voluntariado_actividades_comunitarias.views import bienvenida
 from django.conf.urls.static import static
 from django.conf import settings
-
+from django.views.generic import RedirectView
 urlpatterns = [
     path('admin/', admin.site.urls),
 ]
@@ -32,6 +32,7 @@ urlpatterns = [
 handler404 = 'Voluntariado_actividades_comunitarias.views.pagina_no_encontrada'
 
 urlpatterns = [
+    path('', RedirectView.as_view(url='api/v1/', permanent=False)),
     path('admin/', admin.site.urls),
     path('api/v1/', include('Voluntariado_actividades_comunitarias.urls')),
 ]
