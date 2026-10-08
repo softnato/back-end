@@ -15,27 +15,18 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
+from django.contrib.auth import views
 from django.urls import path, include
 from Voluntariado_actividades_comunitarias.views import bienvenida
-from django.conf.urls.static import static
 from django.conf import settings
-from django.views.generic import RedirectView
-urlpatterns = [
-    path('admin/', admin.site.urls),
-]
-
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', bienvenida, name='bienvenida'),
+    path('voluntariado/', include('Voluntariado_actividades_comunitarias.urls')),
+    path('autenticacion/', include('django.contrib.contrib.auth.urls')),
+
 ]
 
 handler404 = 'Voluntariado_actividades_comunitarias.views.pagina_no_encontrada'
 
-urlpatterns = [
-    path('', RedirectView.as_view(url='api/v1/', permanent=False)),
-    path('admin/', admin.site.urls),
-    path('api/v1/', include('Voluntariado_actividades_comunitarias.urls')),
-]
 
-if settings.DEBUG:
-    urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

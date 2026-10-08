@@ -1,0 +1,30 @@
+[
+  {
+    "model": "Voluntariado_actividades_comunitarias.Perfilvoluntario",
+    "pk": 1,
+    "fields": {
+      "user": 2,
+      "telefono": "+56912345678",
+      "rut_o_dni": "19123456-7",
+      "habilidades": "Primeros auxilios, logística",
+      "disponibilidad": "Fines de semana por la mañana",
+      "created_at": "2026-10-01T10:00:00Z",
+      "updated_at": "2026-10-01T10:00:00Z",
+      "habilitado": true
+    }
+  },
+  {
+    "model": "Voluntariado_actividades_comunitarias.Perfilvoluntario",
+    "pk": 2,
+    "fields": {
+      "user": 3,
+      "telefono": "+56987654321",
+      "rut_o_dni": "18987654-3",
+      "habilidades": "Docencia, carpintería",
+      "disponibilidad": "Tardes de días de semana",
+      "created_at": "2026-10-01T10:00:00Z",
+      "updated_at": "2026-10-01T10:00:00Z",
+      "habilitado": true
+    }
+  }
+]

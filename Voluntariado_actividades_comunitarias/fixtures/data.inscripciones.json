@@ -1,0 +1,28 @@
+[
+  {
+    "model": "Voluntariado_actividades_comunitarias.Inscripcion",
+    "pk": 1,
+    "fields": {
+      "voluntario": 2,
+      "actividad": 1,
+      "estado": "aceptada",
+      "asistio": false,
+      "created_at": "2026-10-02T11:00:00Z",
+      "updated_at": "2026-10-02T11:00:00Z",
+      "habilitado": true
+    }
+  },
+  {
+    "model": "Voluntariado_actividades_comunitarias.Inscripcion",
+    "pk": 2,
+    "fields": {
+      "voluntario": 3,
+      "actividad": 2,
+      "estado": "pendiente",
+      "asistio": false,
+      "created_at": "2026-10-03T09:30:00Z",
+      "updated_at": "2026-10-03T09:30:00Z",
+      "habilitado": true
+    }
+  }
+]

@@ -1,0 +1,17 @@
+[
+  {
+    "model": "Voluntariado_actividades_comunitarias.organizacion",
+    "pk": 1,
+    "fields": {
+      "nombre": "Fundación EcoVerde",
+      "descripcion": "Organización enfocada en la preservación del ecosistema regional",
+      "contacto_email": "contacto@ecoverde.cl",
+      "contacto_telefono": "+56452200112",
+      "sitio_web": "https://ecoverde.cl",
+      "encargado": 1,
+      "created_at": "2026-10-01T10:00:00Z",
+      "updated_at": "2026-10-01T10:00:00Z",
+      "habilitado": true
+    }
+  }
+]

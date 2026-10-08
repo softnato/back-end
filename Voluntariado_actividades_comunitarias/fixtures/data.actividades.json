@@ -1,0 +1,38 @@
+[
+  {
+    "model": "Voluntariado_actividades_comunitarias.Actividad",
+    "pk": 1,
+    "fields": {
+      "titulo": "Limpieza del Cerro Ñielol",
+      "descripcion": "Jornada de recolección de residuos y mantención de senderos.",
+      "organizacion": 1,
+      "categoria": 1,
+      "ubicacion": "Parque Nacional Cerro Ñielol, Temuco",
+      "fecha_inicio": "2026-11-15T09:00:00Z",
+      "fecha_fin": "2026-11-15T14:00:00Z",
+      "cupos_maximos": 30,
+      "estado": "publicada",
+      "created_at": "2026-10-01T10:00:00Z",
+      "updated_at": "2026-10-01T10:00:00Z",
+      "habilitado": true
+    }
+  },
+  {
+    "model": "Voluntariado_actividades_comunitarias.Actividad",
+    "pk": 2,
+    "fields": {
+      "titulo": "Colecta Alimentos Comedor Solidario",
+      "descripcion": "Recolección de no perecibles en supermercados céntricos.",
+      "organizacion": 2,
+      "categoria": 2,
+      "ubicacion": "Centro de Temuco",
+      "fecha_inicio": "2026-12-01T10:00:00Z",
+      "fecha_fin": "2026-12-01T18:00:00Z",
+      "cupos_maximos": 15,
+      "estado": "publicada",
+      "created_at": "2026-10-01T10:00:00Z",
+      "updated_at": "2026-10-01T10:00:00Z",
+      "habilitado": true
+    }
+  }
+]
