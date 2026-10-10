@@ -15,7 +15,7 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.contrib.auth import views
+from django.contrib.auth import views as vistas_auth
 from django.urls import path, include
 from Voluntariado_actividades_comunitarias.views import bienvenida
 from django.conf import settings
@@ -24,9 +24,9 @@ urlpatterns = [
     path('', bienvenida, name='bienvenida'),
     path('voluntariado/', include('Voluntariado_actividades_comunitarias.urls')),
     path('autenticacion/', include('django.contrib.contrib.auth.urls')),
-
-]
-
+    path('login/', vistas_auth.LoginView.as_view()),
+    path('logout/', vistas_auth.LogoutView.as_view()),
+   #path('registro/',views.registro)
 handler404 = 'Voluntariado_actividades_comunitarias.views.pagina_no_encontrada'
 
 
