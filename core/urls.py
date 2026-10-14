@@ -15,18 +15,22 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.contrib.auth import views as vistas_auth
+from django.contrib.auth import views as auth_views
 from django.urls import path, include
 from Voluntariado_actividades_comunitarias.views import bienvenida
 from django.conf import settings
+from django.conf.urls.static import static
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', bienvenida, name='bienvenida'),
     path('voluntariado/', include('Voluntariado_actividades_comunitarias.urls')),
-    path('autenticacion/', include('django.contrib.contrib.auth.urls')),
-    path('login/', vistas_auth.LoginView.as_view()),
-    path('logout/', vistas_auth.LogoutView.as_view()),
-   #path('registro/',views.registro)
+    path('autenticacion/', include('django.contrib.auth.urls')),
+    path('login/', auth_views.LoginView.as_class_or_fn() if hasattr(auth_views.LoginView, 'as_class_or_fn') else auth_views.LoginView.as_view(template_name='Voluntariado_actividades_comunitarias/login.html'), name='login'),
+    path('logout/', auth_views.LogoutView.as_view(next_page='bienvenida'), name='logout'),
+]
+if settings.DEBUG:
+    urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
+    
 handler404 = 'Voluntariado_actividades_comunitarias.views.pagina_no_encontrada'
 
 

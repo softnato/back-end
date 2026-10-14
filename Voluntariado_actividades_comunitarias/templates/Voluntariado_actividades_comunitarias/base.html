@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Plataforma de Voluntariado Comunitario{% endblock %}</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Plus Jakarta Sans', sans-serif; }
+    </style>
+    {% block extra_css %}{% endblock %}
+</head>
+<body class="bg-emerald-50/40 text-slate-800 min-h-screen flex flex-col justify-between">
+
+    <!-- Header / Navbar -->
+    <header class="border-b border-emerald-100 bg-white/90 backdrop-blur-md sticky top-0 z-50 shadow-sm">
+        <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+            <!-- Logo -->
+            <a href="{% url 'bienvenida' %}" class="flex items-center space-x-3">
+                <div class="bg-emerald-600 text-white p-2.5 rounded-2xl shadow-md shadow-emerald-600/20">
+                    <i class="fa-solid fa-hand-holding-heart text-xl"></i>
+                </div>
+                <div>
+                    <span class="font-extrabold text-xl tracking-tight text-slate-900">Voluntariado<span class="text-emerald-600">Comunitario</span></span>
+                    <span class="block text-[10px] uppercase font-bold tracking-widest text-emerald-600/80 -mt-1">Plataforma de Impacto Social</span>
+                </div>
+            </a>
+
+            <!-- Navegación y Sesión -->
+            <div class="flex items-center gap-3">
+                {% if user.is_authenticated %}
+                    <span class="text-sm font-semibold text-slate-700 bg-emerald-100/60 px-3 py-1.5 rounded-xl border border-emerald-200/60 flex items-center gap-2">
+                        <i class="fa-solid fa-user text-emerald-600"></i> {{ user.username }}
+                    </span>
+                    <form action="{% url 'logout' %}" method="post" class="inline">
+                        {% csrf_token %}
+                        <button type="submit" class="bg-slate-100 hover:bg-slate-200 text-slate-700 px-4 py-2 rounded-xl text-sm font-semibold transition border border-slate-200 flex items-center gap-2">
+                            <i class="fa-solid fa-right-from-bracket text-rose-500"></i> Salir
+                        </button>
+                    </form>
+                {% else %}
+                    <a href="{% url 'login' %}" class="bg-emerald-600 hover:bg-emerald-700 text-white px-5 py-2 rounded-xl text-sm font-bold transition shadow-md shadow-emerald-600/20 flex items-center gap-2">
+                        <i class="fa-solid fa-right-to-bracket"></i> Iniciar Sesión
+                    </a>
+                {% endif %}
+
+                <a href="/admin/" class="bg-slate-900 hover:bg-slate-800 text-white px-4 py-2 rounded-xl text-sm font-semibold transition shadow-md shadow-slate-900/10 flex items-center gap-2">
+                    <i class="fa-solid fa-user-shield text-emerald-400"></i> Admin
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Contenido dinámico -->
+    <main class="max-w-7xl mx-auto px-6 py-10 flex-grow w-full">
+        {% block content %}{% endblock %}
+    </main>
+
+    <!-- Footer -->
+    <footer class="border-t border-slate-200 bg-white py-6 text-center text-slate-500 text-sm">
+        <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-3">
+            <p class="font-medium">Evaluación 2 — Backend Django REST Framework & MySQL</p>
+            <p class="text-xs text-slate-400">Plataforma de Voluntariado Comunitario</p>
+        </div>
+    </footer>
+
+    {% block extra_js %}{% endblock %}
+</body>
+</html>
