@@ -1,0 +1,15 @@
+{% extends 'Voluntariado_actividades_comunitarias/base.html' %}
+{% block title %}Vista Protegida (Clase){% endblock %}
+
+{% block content %}
+<div class="max-w-2xl mx-auto bg-white border border-blue-200 rounded-3xl p-8 shadow-lg text-center mt-6">
+    <div class="w-16 h-16 bg-blue-100 text-blue-600 rounded-2xl flex items-center justify-center mx-auto mb-4 text-3xl">
+        <i class="fa-solid fa-shield-halved"></i>
+    </div>
+    <span class="bg-blue-100 text-blue-800 border border-blue-200 px-4 py-1 rounded-full text-xs font-bold uppercase tracking-wide">
+        Vista Protegida Basada en Clases (LoginRequiredMixin)
+    </span>
+    <h2 class="text-3xl font-black text-slate-900 mt-4 mb-2">¡Acceso Permitido por Clase!</h2>
+    <p class="text-slate-600">Has accedido a la vista basada en clases protegida correctamente.</p>
+</div>
+{% endblock %}

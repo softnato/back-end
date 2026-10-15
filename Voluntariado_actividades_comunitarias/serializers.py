@@ -16,7 +16,6 @@ class PerfilVoluntarioSerializer(serializers.ModelSerializer):
     class Meta:
         model = PerfilVoluntario
         fields = '__all__'
-
 class OrganizacionSerializer(serializers.ModelSerializer):
     class Meta:
         model = Organizacion
